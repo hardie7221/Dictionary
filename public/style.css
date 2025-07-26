@@ -1,0 +1,145 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 2.5em 2em 2em 2em;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.3em;
+  font-weight: 600;
+  color: #2d3a4b;
+  margin-bottom: 0.5em;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #6c7a89;
+  font-size: 1.08em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+input[type="text"] {
+  padding: 0.85em 1.1em;
+  font-size: 1.1em;
+  border: 1.5px solid #bfc9d1;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  transition: border 0.2s;
+  width: 70%;
+  background: #f4f8fb;
+}
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+button {
+  padding: 0.85em 1.7em;
+  font-size: 1.1em;
+  border: none;
+  background: linear-gradient(90deg, #007bff 60%, #00c6ff 100%);
+  color: #fff;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #e0eafc;
+}
+button:hover {
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+  box-shadow: 0 4px 16px #b3d8ff;
+}
+
+.error {
+  color: #c00;
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 500;
+  background: #ffeaea;
+  border-radius: 10px;
+  padding: 0.7em 1em;
+  width: 100%;
+}
+
+.result {
+  margin-top: 1em;
+  background: #f7fafd;
+  border-radius: 14px;
+  padding: 1.5em 1em 1em 1em;
+  box-shadow: 0 2px 8px #e0eafc;
+  width: 100%;
+}
+.result h2 {
+  color: #007bff;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+.phonetics {
+  color: #555;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+.meaning {
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #e0eafc;
+}
+.part-of-speech {
+  font-weight: bold;
+  color: #2d3a4b;
+  margin-bottom: 0.5em;
+}
+.synonyms {
+  color: #007bff;
+  font-weight: 500;
+}
+.example {
+  color: #555;
+  font-style: italic;
+}
+audio {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 98vw;
+    padding: 1em;
+  }
+  input[type="text"] {
+    width: 60%;
+  }
+  .result {
+    padding: 1em 0.5em 0.5em 0.5em;
+  }
+}

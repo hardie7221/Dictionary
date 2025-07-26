@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dictionary App</h1>
+    <div class="subtitle">Type a word to get its definition and pronunciation</div>
+    <form action="/search" method="POST">
+      <input type="text" name="word" placeholder="Enter a word..." required autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    <% if (result) { %>
+      <div class="result">
+        <h2><%= result.word %></h2>
+        <% if (result.phonetics && result.phonetics.length) { %>
+          <div class="phonetics">
+            <% result.phonetics.forEach(function(p) { %>
+              <% if (p.text) { %><span>[<%= p.text %>]</span> <% } %>
+              <% if (p.audio) { %><audio controls src="<%= p.audio %>"></audio><% } %>
+            <% }); %>
+          </div>
+        <% } %>
+        <% result.meanings.forEach(function(meaning) { %>
+          <div class="meaning">
+            <div class="part-of-speech"><%= meaning.partOfSpeech %></div>
+            <ul>
+              <% meaning.definitions.forEach(function(def) { %>
+                <li>
+                  <strong>Definition:</strong> <%= def.definition %><br>
+                  <% if (def.example) { %>
+                    <span class="example">Example: <%= def.example %></span><br>
+                  <% } %>
+                  <% if (def.synonyms && def.synonyms.length) { %>
+                    <span class="synonyms">Synonyms: <%= def.synonyms.join(', ') %></span>
+                  <% } %>
+                </li>
+              <% }); %>
+            </ul>
+          </div>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
