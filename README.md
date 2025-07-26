@@ -33,4 +33,4 @@ Download the ZIP file and extract it.
 1. run the "npm i" command to install all the dependencies.
 2. run the "nodemon index.js" command to start the server.
 3. On your browser type the link "http://localhost:3000/".
-4. Link to the website : (https://jokeappp.onrender.com/)
+4. Link to the website : (https://vocabvault-3c6t.onrender.com/)
